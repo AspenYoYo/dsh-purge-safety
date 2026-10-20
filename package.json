@@ -1,5 +1,5 @@
 {
-  "name": "dsh-purge",
+  "name": "dsh-purge-safety",
   "version": "1.1.71",
   "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
   "type": "module",
@@ -16,7 +16,7 @@
     "./package.json": "./package.json"
   },
   "bin": {
-    "dsh-purge": "bin/dsh-purge.js"
+    "dsh-purge-safety": "bin/dsh-purge.js"
   },
   "files": [
     "lib",
@@ -55,11 +55,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YuJunZhiXue/dsh-purge.git"
+    "url": "git+https://github.com/AspenYoYo/dsh-purge-safety.git"
   },
-  "homepage": "https://github.com/YuJunZhiXue/dsh-purge#readme",
+  "homepage": "https://github.com/AspenYoYo/dsh-purge-safety#readme",
   "bugs": {
-    "url": "https://github.com/YuJunZhiXue/dsh-purge/issues"
+    "url": "https://github.com/AspenYoYo/dsh-purge-safety/issues"
   },
   "dsh": {
     "bundle": {
@@ -77,9 +77,9 @@
     },
     "install": {
       "preferred": "tarball",
-      "tarball": "https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz",
-      "zip": "https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.zip",
-      "git": "https://github.com/YuJunZhiXue/dsh-purge.git"
+      "tarball": "https://github.com/AspenYoYo/dsh-purge-safety/archive/refs/heads/main.tar.gz",
+      "zip": "https://github.com/AspenYoYo/dsh-purge-safety/archive/refs/heads/main.zip",
+      "git": "https://github.com/AspenYoYo/dsh-purge-safety.git"
     }
   },
   "publishConfig": {

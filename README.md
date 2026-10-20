@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/banner.svg" alt="dsh-purge" width="720">
+  <img src="docs/banner.svg" alt="dsh-purge-safety" width="720">
 </p>
 
-<h1 align="center">⚔️ DeepSeek Harness cybersecurity red-team tool (dsh-purge)</h1>
+<h1 align="center">⚔️ DeepSeek Harness cybersecurity red-team tool (dsh-purge-safety)</h1>
 
 <p align="center"><strong>Version 1.1.71</strong></p>
 
@@ -36,19 +36,19 @@
 
 ## What this is
 
-**dsh-purge** is a cybersecurity red-team plugin for the official [DeepSeek Harness](https://www.deepseek.com/harness/) already installed on your machine. Official **Web** (`dsh web`) and the official **desktop EXE** are both supported. Install and Apply them separately.
+**dsh-purge-safety** is a cybersecurity red-team plugin for the official [DeepSeek Harness](https://www.deepseek.com/harness/) already installed on your machine. Official **Web** (`dsh web`) and the official **desktop EXE** are both supported. Install and Apply them separately.
 
 Harness does more than forward a prompt. It rewrites prompts, approval gates, sandbox policy, and session migration at runtime. Asking only “will the model answer” treats a host-layer block as a model refusal. This plugin separates those two layers on your own install, for controlled evaluation and for seeing which default policy is too tight.
 
 | You get | What it does |
 |---|---|
-| **dsh-purge dock** | A button beside the session title opens the right dock. Two pages: Clean and Drill |
+| **dsh-purge-safety dock** | A button beside the session title opens the right dock. Two pages: Clean and Drill |
 | **Clean** | Grouped patch status, Apply / Restore / Uninstall, prompt editor, multiple rule sets |
 | **Drill** | Built into the stable release. After authorization: assets, skills, and the local environment. Only for a host you manage, an offline target, or a written authorized exercise |
 | **Host policy** | Default copy, permission policy, and tool limits. Official capabilities stay. No second invented identity |
 | **On start** | Checks and reapplies. After npm overwrites `node_modules`, you do not hand-edit files |
 
-No hardcoded drive letters. It looks at `$DSH_HOME`, `.dsh` next to the dsh launcher, then `~/.dsh`. It does not patch the Harness source tree. **Apply** on the **Clean** page of **dsh-purge** is what writes the changes. Identity comes from the encrypted prompt shipped in the plugin, the text the prompt box shows by default. The host prompt file is not read.
+No hardcoded drive letters. It looks at `$DSH_HOME`, `.dsh` next to the dsh launcher, then `~/.dsh`. It does not patch the Harness source tree. **Apply** on the **Clean** page of **dsh-purge-safety** is what writes the changes. Identity comes from the encrypted prompt shipped in the plugin, the text the prompt box shows by default. The host prompt file is not read.
 
 It only touches the official `@deepseek-ai` packages and local config on the user's machine. It is not a public scanner and not an attack kit for third-party sites. The repo does not ship malware, unauthorized-exploit scripts, or payloads aimed at the public internet.
 
@@ -119,15 +119,15 @@ Web and the official desktop EXE are the two maintained hosts. Install and patch
 
 | What you run | Profile | Command |
 |---|---|---|
-| Official `dsh web` | `web` | `dsh plugin --profile web add dsh-purge` |
-| Official desktop EXE | `desktop` | `dsh plugin --profile desktop add dsh-purge` |
+| Official `dsh web` | `web` | `dsh plugin --profile web add dsh-purge-safety` |
+| Official desktop EXE | `desktop` | `dsh plugin --profile desktop add dsh-purge-safety` |
 
 If this directory is already a clone, use `add .` instead of the package name. If `dsh` is not on PATH, use [Manual install](#manual). Registry blocked: add `https://github.com/AspenYoYo/dsh-purge-safety/archive/refs/heads/main.tar.gz` with the same `--profile`.
 
 For the desktop client you can also click the button (`dsh://` deep link):
 
 <p align="center">
-  <a href="dsh://plugin/install?id=dsh-purge&name=dsh-purge&version=1.1.71&repo=AspenYoYo%2Fdsh-purge-safety&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&downloadUrl=https%3A%2F%2Fgithub.com%2FAspenYoYo%2Fdsh-purge-safety%2Farchive%2Frefs%2Fheads%2Fmain.tar.gz"><strong>Install in desktop client</strong></a>
+  <a href="dsh://plugin/install?id=dsh-purge-safety&name=dsh-purge-safety&version=1.1.71&repo=AspenYoYo%2Fdsh-purge-safety&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&downloadUrl=https%3A%2F%2Fgithub.com%2FAspenYoYo%2Fdsh-purge-safety%2Farchive%2Frefs%2Fheads%2Fmain.tar.gz"><strong>Install in desktop client</strong></a>
 </p>
 
 ### After the command: three steps
@@ -135,14 +135,14 @@ For the desktop client you can also click the button (`dsh://` deep link):
 Adding the plugin to a profile does **not** patch `@deepseek-ai` by itself.
 
 1. **Quit and reopen** the host you installed into — stop and restart `dsh web`, or quit the desktop tray and reopen that app.
-2. On **that host**, click **dsh-purge** beside the session title, then **Apply** on the **Clean** page. It is not on the host Settings page.
+2. On **that host**, click **dsh-purge-safety** beside the session title, then **Apply** on the **Clean** page. It is not on the host Settings page.
 3. A successful **Apply** restarts once so patches load. It does not restart if it did not finish.
 
 Web controls affect Web only; desktop controls affect the desktop app only. Do not Apply one host from the other.
 
 ### How to tell it installed
 
-- **dsh-purge** sits beside the session title, with **Apply** on its Clean page.
+- **dsh-purge-safety** sits beside the session title, with **Apply** on its Clean page.
 - `/purge status` in chat prints `DSH_HOME` and the patch list — the path should be the home you actually run.
 - Optional packages that are not installed (liangshen) show as skipped and do not block Apply.
 
@@ -155,19 +155,19 @@ Paste the block below to a local assistant. It should only run the install comma
 
 <!-- AI-AGENT-START -->
 
-Install the DeepSeek Harness plugin `dsh-purge` into the Web profile only. Do not scan the whole disk, do not read or edit other files, do not apply settings, and do not restart the app. Do not install into the desktop profile.
+Install the DeepSeek Harness plugin `dsh-purge-safety` into the Web profile only. Do not scan the whole disk, do not read or edit other files, do not apply settings, and do not restart the app. Do not install into the desktop profile.
 
 **Web (official `dsh web`)**
 
 If `dsh` is not on PATH, tell the user and stop.
 
 ```sh
-dsh plugin --profile web add dsh-purge
+dsh plugin --profile web add dsh-purge-safety
 ```
 
 If this directory is already a clone, use `dsh plugin --profile web add .`. If the npm registry is blocked, use `dsh plugin --profile web add https://github.com/AspenYoYo/dsh-purge-safety/archive/refs/heads/main.tar.gz`.
 
-After the command finishes, tell the user to fully quit and restart `dsh web`, then open **dsh-purge** beside the session title and **Apply** on **Clean**. Then stop.
+After the command finishes, tell the user to fully quit and restart `dsh web`, then open **dsh-purge-safety** beside the session title and **Apply** on **Clean**. Then stop.
 
 <!-- AI-AGENT-END -->
 
@@ -199,32 +199,32 @@ $cands += @("$env:APPDATA\DeepSeek Harness\dsh-home", "$env:LOCALAPPDATA\DeepSee
 $cands | Select-Object -Unique | Where-Object { $_ -and (Test-Path (Join-Path $_ "profiles")) }
 ```
 
-**2. Put the plugin at `$DSH_HOME/plugins/dsh-purge`** (folder must be named `dsh-purge`, with a `package.json` whose `"name"` is `dsh-purge`).
+**2. Put the plugin at `$DSH_HOME/plugins/dsh-purge-safety`** (folder must be named `dsh-purge-safety`, with a `package.json` whose `"name"` is `dsh-purge-safety`).
 
 ```sh
-git clone https://github.com/AspenYoYo/dsh-purge-safety.git "$DSH_HOME/plugins/dsh-purge"
+git clone https://github.com/AspenYoYo/dsh-purge-safety.git "$DSH_HOME/plugins/dsh-purge-safety"
 ```
 
-Without git: download [main.tar.gz](https://github.com/AspenYoYo/dsh-purge-safety/archive/refs/heads/main.tar.gz), extract, rename `dsh-purge-safety-main` → `dsh-purge`, and place it under `plugins`. If you already have a clone, copy the whole tree — not a few `.js` files.
+Without git: download [main.tar.gz](https://github.com/AspenYoYo/dsh-purge-safety/archive/refs/heads/main.tar.gz), extract, rename `dsh-purge-safety-main` → `dsh-purge-safety`, and place it under `plugins`. If you already have a clone, copy the whole tree — not a few `.js` files.
 
 **3. Edit only that profile's `package.json` — back it up first.** Web → `$DSH_HOME/profiles/web/package.json`; desktop → `$DSH_HOME/profiles/desktop/package.json`. Add **only two things**, keeping every existing dependency and bundle:
 
-1. In `dependencies`, add `"dsh-purge": "file:../../plugins/dsh-purge"`
-2. At the **end** of `dsh.profile.bundles`, append `"dsh-purge"` (skip if already there)
+1. In `dependencies`, add `"dsh-purge-safety": "file:../../plugins/dsh-purge-safety"`
+2. At the **end** of `dsh.profile.bundles`, append `"dsh-purge-safety"` (skip if already there)
 
 ```json
 {
   "name": "dsh-profile-web",
   "private": true,
   "dependencies": {
-    "dsh-purge": "file:../../plugins/dsh-purge"
+    "dsh-purge-safety": "file:../../plugins/dsh-purge-safety"
   },
   "dsh": {
     "profile": {
       "bundles": [
         "@deepseek-ai/dsh-base",
         "@deepseek-ai/dsh-web-app",
-        "dsh-purge"
+        "dsh-purge-safety"
       ],
       "patchReload": "live"
     }
@@ -232,7 +232,7 @@ Without git: download [main.tar.gz](https://github.com/AspenYoYo/dsh-purge-safet
 }
 ```
 
-Keep JSON valid (comma before the new item, none after the last). Do not switch `file:../../plugins/dsh-purge` to an absolute path, do not touch `patchReload` or other plugins, and do not list `"dsh-purge"` twice. On desktop, if there is no `dsh-web-app` row, do not add one.
+Keep JSON valid (comma before the new item, none after the last). Do not switch `file:../../plugins/dsh-purge-safety` to an absolute path, do not touch `patchReload` or other plugins, and do not list `"dsh-purge-safety"` twice. On desktop, if there is no `dsh-web-app` row, do not add one.
 
 **4. Run `pnpm install` in that profile only** (`cd` into the profile dir, not the repo root or `$DSH_HOME`):
 
@@ -241,7 +241,7 @@ cd "$DSH_HOME/profiles/web"   # or profiles/desktop
 pnpm install
 ```
 
-Success: `profiles/<web|desktop>/node_modules/dsh-purge/package.json` exists. If `pnpm` is missing, use the Node / pnpm shipped with official `dsh`; on `Could not resolve`, re-check the `file:` path; on a JSON error, fix commas or restore the backup.
+Success: `profiles/<web|desktop>/node_modules/dsh-purge-safety/package.json` exists. If `pnpm` is missing, use the Node / pnpm shipped with official `dsh`; on `Could not resolve`, re-check the `file:` path; on a JSON error, fix commas or restore the backup.
 
 **5. Fully quit that host, reopen it, then Apply** — same three steps as above. The card appears beside the session title; click **Apply** (or `/purge apply`) on that host only. If the card is missing, you likely edited the other `.dsh` — go back to step 1.
 
@@ -249,11 +249,11 @@ Success: `profiles/<web|desktop>/node_modules/dsh-purge/package.json` exists. If
 
 ### Uninstall
 
-**dsh-purge** beside the session title → **Clean** → **Uninstall**. Confirm the dialog: it reverts any applied patches, restores the original Harness, and restarts the current host.
+**dsh-purge-safety** beside the session title → **Clean** → **Uninstall**. Confirm the dialog: it reverts any applied patches, restores the original Harness, and restarts the current host.
 
 ```sh
 # or from a terminal / chat
-dsh-purge --uninstall
+dsh-purge-safety --uninstall
 # /purge uninstall
 ```
 
@@ -261,8 +261,8 @@ Plugin config lives in `cordis.patch.yml` (`postPrompt` is empty by default):
 
 ```yaml
 - insert:
-    - id: dsh-purge
-      name: 'dsh-purge'
+    - id: dsh-purge-safety
+      name: 'dsh-purge-safety'
       config:
         enabled: true
         autoApplyOnStart: true
@@ -277,7 +277,7 @@ Plugin config lives in `cordis.patch.yml` (`postPrompt` is empty by default):
 
 ## Preview
 
-**dsh-purge** sits beside the session title. It opens a right-hand dock with two pages: **Clean** and **Drill**. Switch **Light / Ink**. Patches are grouped; the count only includes items that actually applied. Rule sets sit in a list above the editor, with Enable and Delete on each row.
+**dsh-purge-safety** sits beside the session title. It opens a right-hand dock with two pages: **Clean** and **Drill**. Switch **Light / Ink**. Patches are grouped; the count only includes items that actually applied. Rule sets sit in a list above the editor, with Enable and Delete on each row.
 
 The first time you open Drill you read the notice, wait out the countdown, scroll to the end, and check three boxes. Clean does not need that step. Drill is only for a host you manage, an offline target, or an exercise that already has written authorization.
 
@@ -305,7 +305,7 @@ On the Clean page, under Prompt. One host per line, then Save list. Steps are in
 
 | Area | What it shows |
 |---|---|
-| dsh-purge | button beside the session title; opens or collapses the dock |
+| dsh-purge-safety | button beside the session title; opens or collapses the dock |
 | Clean | the old Rules page: patches, prompt, rule sets, skills |
 | Drill | assets, skills, and environment after authorization. The tab says Unauthorized until then |
 | Patches | grouped status, Apply, Restore, or Uninstall |
@@ -327,11 +327,11 @@ Runtime files live under `$DSH_HOME`: `prompt-inject.md`, `rules/`, `skills/`, `
 ## Usage
 
 ```sh
-dsh-purge --status
-dsh-purge --apply
-dsh-purge --revert
-dsh-purge --uninstall
-dsh-purge --edit
+dsh-purge-safety --status
+dsh-purge-safety --apply
+dsh-purge-safety --revert
+dsh-purge-safety --uninstall
+dsh-purge-safety --edit
 
 /purge status | apply | revert | uninstall | edit | help
 /rules list | use <id> | create <id> | delete <id> | reset | help
@@ -349,7 +349,7 @@ If the **same task works in standard but fails in minimal or PTC**, preset `run_
 
 ### Response speed
 
-DSH runs Bash calls in a tool batch one at a time. Older dsh-purge releases raised the default foreground wait from 60 seconds to 10 minutes, so one slow command could hold up later calls for that long. Patch #21 now restores marked plugin values to the official 60-second default. Unmarked timeouts and other custom values are preserved; an unmarked 10-minute value cannot reliably be distinguished from a user setting.
+DSH runs Bash calls in a tool batch one at a time. Older dsh-purge-safety releases raised the default foreground wait from 60 seconds to 10 minutes, so one slow command could hold up later calls for that long. Patch #21 now restores marked plugin values to the official 60-second default. Unmarked timeouts and other custom values are preserved; an unmarked 10-minute value cannot reliably be distinguished from a user setting.
 
 For a shorter wait in `dsh web` on macOS/Linux, add this entry to `$DSH_HOME/profiles/web/cordis.patch.yml` (normally `~/.dsh/profiles/web/cordis.patch.yml`). Edit an existing entry with the same id instead of adding a duplicate. This profile layer is applied after the bundled configuration, so future plugin applies keep the override.
 
@@ -379,7 +379,7 @@ Addresses in mainland China, Hong Kong, and Macau stay forbidden unless that one
 
 The box sits under Prompt. If the dock does not show it yet, quit DeepSeek Harness completely and open it again.
 
-1. Click **dsh-purge** beside the session title and stay on **Clean**.
+1. Click **dsh-purge-safety** beside the session title and stay on **Clean**.
 2. Scroll past **Prompt**. **Own servers** is the next block.
 3. Put one host on each line, in one of these forms:
    - `203.0.113.10` — one IP.
@@ -429,7 +429,7 @@ flowchart TD
   A["Restart or new session"] --> B["Inject the plugin's encrypted default. No save click, and no host prompt file"]
 ```
 
-Prompt injection and ruleset decision at every turn. The three inputs on the left are what you control in the dsh-purge panel; the dotted edges show which decision each one drives:
+Prompt injection and ruleset decision at every turn. The three inputs on the left are what you control in the dsh-purge-safety panel; the dotted edges show which decision each one drives:
 
 ```mermaid
 flowchart TD
@@ -510,7 +510,7 @@ What changed, and the zip, are on [Releases](https://github.com/AspenYoYo/dsh-pu
 - Scope is rendered copy, defaults, and runtime logic inside local `@deepseek-ai/*` packages, plus override files and rule sets under the harness home.
 - After an upgrade, unmatched originals show as skipped. Apply still completes, and those files are left unchanged.
 - Third-party plugin *source repos* outside `@deepseek-ai` are left alone (CMD silence may **best-effort** patch installed doctor / market / liangshen / mnemon at runtime).
-- Install the npm package `dsh-purge`: `dsh plugin --profile web add dsh-purge` or `dsh plugin --profile desktop add dsh-purge`. From this repo, `add .`. If the registry is blocked, add the main.tar.gz URL instead.
+- Install the npm package `dsh-purge-safety`: `dsh plugin --profile web add dsh-purge-safety` or `dsh plugin --profile desktop add dsh-purge-safety`. From this repo, `add .`. If the registry is blocked, add the main.tar.gz URL instead.
 
 ---
 
